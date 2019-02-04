@@ -1,0 +1,21 @@
+uuid: fc20cf2b-75e4-4e81-8d34-ed798b1d9a40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - paragraphs.paragraphs_type.blog_row
+  module:
+    - text
+id: paragraph.blog_row.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: blog_row
+label: Paragraph
+description: 'Paragraph of this blog.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

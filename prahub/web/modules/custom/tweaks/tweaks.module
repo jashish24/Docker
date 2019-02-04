@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains tweaks.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tweaks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tweaks module.
+    case 'help.page.tweaks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupal customizations and new functionalities.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tweaks_theme() {
+  return [
+    'tweaks' => [
+      'render element' => 'children',
+    ],
+  ];
+}

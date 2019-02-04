@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  node:
+    volumes:
+      - ./reactjs:/app
+  php:
+    image: wodby/drupal:$DRUPAL_TAG
+    environment:
+      PHP_FPM_CLEAR_ENV: "no"
+    volumes:
+      - ./:/var/www/html
+
+  nginx:
+    volumes:
+      - ./:/var/www/html
+
+volumes:
+  codebase:

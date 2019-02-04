@@ -1,0 +1,5 @@
+name: 'Tweaks'
+type: module
+description: 'Drupal customizations and new functionalities.'
+core: 8.x
+package: 'Custom'

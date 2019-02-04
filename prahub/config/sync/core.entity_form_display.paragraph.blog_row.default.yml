@@ -1,0 +1,26 @@
+uuid: 8fde7d7c-e2c5-4b5f-a7ae-a839739fd04a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.blog_row.field_paragraph
+    - paragraphs.paragraphs_type.blog_row
+  module:
+    - text
+id: paragraph.blog_row.default
+targetEntityType: paragraph
+bundle: blog_row
+mode: default
+content:
+  field_paragraph:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true
