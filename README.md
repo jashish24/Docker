@@ -35,7 +35,10 @@ You can change port number, container names, paths etc by editing .env file.
 #### @TODOs:
 
 1. Consolidate multiple setup commands to single command
-2. Pass environment variables from .env to reactjs
-3. Better documentation
+2. Preservation of container data even after removal
+3. Pass environment variables from .env to reactjs
+4. Better documentation
+
+Any help or suggestion are always welcome.
 
 ## 
