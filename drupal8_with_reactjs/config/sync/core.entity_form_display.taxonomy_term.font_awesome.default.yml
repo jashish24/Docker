@@ -1,0 +1,31 @@
+uuid: 500d8955-29ab-42ab-8727-f04f2525d874
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.font_awesome.field_class_name
+    - taxonomy.vocabulary.font_awesome
+id: taxonomy_term.font_awesome.default
+targetEntityType: taxonomy_term
+bundle: font_awesome
+mode: default
+content:
+  field_class_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

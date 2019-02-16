@@ -1,0 +1,37 @@
+uuid: 7ac4b3bf-426d-4267-8122-0884bf537e9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_experience_summary
+    - paragraphs.paragraphs_type.experience
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_experience_summary
+field_name: field_experience_summary
+entity_type: user
+bundle: user
+label: 'Experience Summary'
+description: 'Experience Summary'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      experience: experience
+    target_bundles_drag_drop:
+      blog_row:
+        weight: 4
+        enabled: false
+      experience:
+        enabled: true
+        weight: 5
+      social_link:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

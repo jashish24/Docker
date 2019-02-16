@@ -1,0 +1,19 @@
+uuid: 325482a6-fcbf-4e63-82a2-5f425a0932c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagline
+    - node.type.blog
+id: node.blog.field_tagline
+field_name: field_tagline
+entity_type: node
+bundle: blog
+label: Tagline
+description: Tagline
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

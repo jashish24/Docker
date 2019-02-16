@@ -1,0 +1,29 @@
+uuid: 7e3d5da6-a26a-4257-b1a1-f637a0ffe3b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_icon
+    - paragraphs.paragraphs_type.social_link
+    - taxonomy.vocabulary.font_awesome
+id: paragraph.social_link.field_social_icon
+field_name: field_social_icon
+entity_type: paragraph
+bundle: social_link
+label: 'Social Icon'
+description: 'Icon of this social link.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      font_awesome: font_awesome
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

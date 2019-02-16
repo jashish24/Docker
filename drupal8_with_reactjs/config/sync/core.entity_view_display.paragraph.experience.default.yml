@@ -1,0 +1,62 @@
+uuid: e0807d81-1899-411d-ba9b-168b4decc344
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.experience.field_company
+    - field.field.paragraph.experience.field_current_company
+    - field.field.paragraph.experience.field_description
+    - field.field.paragraph.experience.field_duration
+    - field.field.paragraph.experience.field_position
+    - paragraphs.paragraphs_type.experience
+  module:
+    - datetime_range
+id: paragraph.experience.default
+targetEntityType: paragraph
+bundle: experience
+mode: default
+content:
+  field_company:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_current_company:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_description:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_duration:
+    weight: 2
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_position:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.blog_row.field_paragraph
+    - field.field.paragraph.blog_row.field_paragraph_heading
+    - field.field.paragraph.blog_row.field_paragraph_image
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.blog_row
   module:
+    - image
     - text
 id: paragraph.blog_row.default
 targetEntityType: paragraph
@@ -19,6 +23,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_paragraph_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
 hidden:
   created: true

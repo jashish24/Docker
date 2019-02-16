@@ -1,0 +1,19 @@
+uuid: 3778475e-b256-4b34-a33a-e8869421ce09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_position
+field_name: field_position
+entity_type: paragraph
+bundle: experience
+label: Position
+description: 'Position during this experience.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

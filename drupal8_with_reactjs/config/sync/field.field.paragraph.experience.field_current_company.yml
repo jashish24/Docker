@@ -1,0 +1,23 @@
+uuid: 4a1526ed-9dab-47ca-b800-e84574db43c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_current_company
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_current_company
+field_name: field_current_company
+entity_type: paragraph
+bundle: experience
+label: 'Current Company'
+description: 'If you are currently working here or not.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

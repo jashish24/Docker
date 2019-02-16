@@ -22,7 +22,7 @@ services:
     working_dir: /app
     env_file: .env
     environment:
-      - BASE_URL=$PROJECT_BASE_URL
+      - REACT_APP_DRUPAL_SERVICE=${PROJECT_BASE_URL}:${PROJECT_PORT}
     labels:
       - 'traefik.backend=node'
       - 'traefik.port=3000'

@@ -1,0 +1,19 @@
+uuid: ca4742af-c29b-4c03-bfe3-3ecf59deaf11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: experience
+label: Description
+description: 'Description of this experience.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

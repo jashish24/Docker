@@ -1,0 +1,19 @@
+uuid: f58a6bc5-afe9-4c0a-8956-1d6667dfc27a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_company
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_company
+field_name: field_company
+entity_type: paragraph
+bundle: experience
+label: Company
+description: 'Company of this experience.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
