@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
+import { Image } from 'react-bootstrap';
 import axios from 'axios';
-//import logo from '../logo.svg';
-/*import Footer from "./Footer";
-import Header from "./Header";*/
 import UserHeader from "./UserHeader";
 import UserDetails from "./UserDetails";
 import '../assets/vendor/bootstrap/css/bootstrap.min.css';
 import '../assets/vendor/fontawesome/css/all.min.css';
 import '../assets/css/resume.css';
+import loading from '../assets/images/loading.webp';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Welcome",
       csrf_token: "",
     };
+
     this.baseurl = "http://" + process.env.REACT_APP_DRUPAL_SERVICE;
   }
 
-  async componentDidMount() {
+  async componentWillMount() {
     const token_url = this.baseurl + '/rest/session/token';
     // first request is to fetch csrf token
     await axios.get(token_url, {
@@ -56,9 +55,6 @@ class App extends Component {
   }
 
   render() {
-    setTimeout(() => {
-      this.setState({title: "Welcome Ashish!"})
-    }, 2000);
     if (this.state.user && this.state.user_picture) {
       const { attributes } = this.state.user_picture.data;
       return (
@@ -69,7 +65,12 @@ class App extends Component {
       );
     }
     return (
-      <div>Loading...</div>
+      <div id="loading-page">
+        <div className="loading-film">&nbsp;</div>
+        <div className="loading-content">
+          <Image fluid src={ loading } alt="" />
+        </div>
+      </div>
     );
   }
 }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.education.field_college_university_name
+    - field.field.paragraph.education.field_degree_major
     - field.field.paragraph.education.field_degree_name
     - field.field.paragraph.education.field_duration
     - field.field.paragraph.education.field_gpa
@@ -17,6 +18,14 @@ mode: default
 content:
   field_college_university_name:
     weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_degree_major:
+    weight: 4
     label: above
     settings:
       link_to_entity: false

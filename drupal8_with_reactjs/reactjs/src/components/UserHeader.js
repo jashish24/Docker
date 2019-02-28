@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { Navbar, Image } from 'react-bootstrap';
+import Scrollspy from 'react-scrollspy';
 
 export default class UserHeader extends Component {
   constructor(props) {
     super(props);
     this.baseurl = "http://" + process.env.REACT_APP_DRUPAL_SERVICE;
+  }
+
+  handleScroll(event) {
+    event.preventDefault();
+
+    const { attributes } = event.currentTarget;
+    const element = document.getElementById(attributes.href.value.replace('#', ''));
+
+    window.scrollTo({top: element.offsetTop, behavior: 'smooth'});
+  }
+
+  componentDidMount() {
+    this.setState({
+      about: false,
+    });
   }
 
   render() {
@@ -26,26 +42,26 @@ export default class UserHeader extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav">
+          <Scrollspy items={ ['about', 'experience', 'education', 'skills', 'interests', 'awards'] } currentClassName="active" className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger active" href="#about">About</a>
+              <a onClick={ this.handleScroll.bind(this) } className="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#experience">Experience</a>
+              <a onClick={ this.handleScroll.bind(this) } className="nav-link js-scroll-trigger" href="#experience">Experience</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#education">Education</a>
+              <a onClick={ this.handleScroll.bind(this) } className="nav-link js-scroll-trigger" href="#education">Education</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#skills">Skills</a>
+              <a onClick={ this.handleScroll.bind(this) } className="nav-link js-scroll-trigger" href="#skills">Skills</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#interests">Interests</a>
+              <a onClick={ this.handleScroll.bind(this) } className="nav-link js-scroll-trigger" href="#interests">Interests</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#awards">Awards</a>
+              <a onClick={ this.handleScroll.bind(this) } className="nav-link js-scroll-trigger" href="#awards">Awards</a>
             </li>
-          </ul>
+          </Scrollspy>
         </div>
       </Navbar>
     );
