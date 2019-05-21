@@ -18,10 +18,10 @@ To ssh into containers run command `docker exec -it <container_name> bash`
 
 #### Steps to use:
 
-1. Make sure you are inside `drupal8_with_reactjs` or directory containing `docker-compose.yml`
+1. Make sure you are inside `drupal8_with_reactjs` (`prahub` is updated more frequently) or directory containing `docker-compose.yml`
 2. Make copy of .env.example & rename to .env
 3. Run `docker-compose up -d`
-4. SSH into PHP container and run `composer install`
+4. SSH into PHP container (`docker exec -it prabhakarhub_php bash` in this case) and run `composer install`
 5. SSH into PHP container and run `drush cim -y` 
 6. Exit from PHP container.
 
