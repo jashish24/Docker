@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.blog.field_about_image
+    - field.field.node.blog.field_blog_content
+    - field.field.node.blog.field_tagline
     - node.type.blog
   module:
     - user
@@ -17,4 +20,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_about_image: true
+  field_blog_content: true
+  field_tagline: true
