@@ -1,0 +1,21 @@
+uuid: ce9b81ba-9a84-4c7c-a4a6-26c65177ccd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_duration
+    - paragraphs.paragraphs_type.experience
+  module:
+    - datetime_range
+id: paragraph.experience.field_duration
+field_name: field_duration
+entity_type: paragraph
+bundle: experience
+label: Duration
+description: 'Duration of this experience.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

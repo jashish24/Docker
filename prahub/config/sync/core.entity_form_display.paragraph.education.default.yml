@@ -1,0 +1,59 @@
+uuid: 9f89c11a-91f7-4a30-a447-7f02fa980b9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.education.field_college_university_name
+    - field.field.paragraph.education.field_degree_major
+    - field.field.paragraph.education.field_degree_name
+    - field.field.paragraph.education.field_duration
+    - field.field.paragraph.education.field_gpa
+    - paragraphs.paragraphs_type.education
+  module:
+    - datetime_range
+id: paragraph.education.default
+targetEntityType: paragraph
+bundle: education
+mode: default
+content:
+  field_college_university_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_degree_major:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_degree_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_duration:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_gpa:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

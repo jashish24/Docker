@@ -1,0 +1,20 @@
+uuid: c8e86a6a-824c-4017-9c6a-e6507d72635a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_social_icon
+field_name: field_social_icon
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

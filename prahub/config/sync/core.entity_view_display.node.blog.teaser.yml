@@ -1,0 +1,20 @@
+uuid: 7da06cb2-b192-4e80-8335-0dc089f0b04f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.blog
+  module:
+    - user
+id: node.blog.teaser
+targetEntityType: node
+bundle: blog
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

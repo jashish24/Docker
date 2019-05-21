@@ -1,0 +1,9 @@
+uuid: 1fdaab7c-c40f-4626-8610-0e4f92d44d71
+langcode: en
+status: true
+dependencies: {  }
+id: social_link
+label: 'Social Link'
+icon_uuid: null
+description: 'Social media link related to an entity.'
+behavior_plugins: {  }

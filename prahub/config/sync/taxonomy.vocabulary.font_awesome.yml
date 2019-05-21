@@ -1,0 +1,9 @@
+uuid: 96fc6d6e-ea4a-489d-8e59-daeee02452cd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Font Awesome'
+vid: font_awesome
+description: 'Icon Classes of font awesome.'
+hierarchy: 0
+weight: 0

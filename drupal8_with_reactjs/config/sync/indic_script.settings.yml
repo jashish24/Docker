@@ -1,0 +1,27 @@
+indic_script_langs:
+  hi_en: hi_en
+  ta_en: 0
+  ta_99: 0
+  ta_tw: 0
+  ma_en: 0
+  ma_tw: 0
+  hi_tw: 0
+  hi_tw_re: 0
+  be_en: 0
+  be_unijoy: 0
+  be_tw: 0
+  gu_en: 0
+  gu_tw: 0
+  ka_en: 0
+  ka_tw: 0
+  or_en: 0
+  or_tw: 0
+  pu_en: 0
+  pu_tw: 0
+  te_en: 0
+  te_tw: 0
+indic_script_page_excl_mode: '0'
+indic_script_excl_paths: ''
+indic_script_excl_mode: '1'
+indic_script_excl_fields: field_paragraph
+indic_script_enable_demo: 0

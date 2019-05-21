@@ -1,0 +1,21 @@
+uuid: 7d8e5191-4692-4a08-aa61-063fa6d7290e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_duration
+    - paragraphs.paragraphs_type.education
+  module:
+    - datetime_range
+id: paragraph.education.field_duration
+field_name: field_duration
+entity_type: paragraph
+bundle: education
+label: Duration
+description: Duration
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

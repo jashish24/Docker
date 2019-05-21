@@ -35,6 +35,7 @@ module:
   help: 0
   history: 0
   image: 0
+  indic_script: 0
   jsonapi: 0
   kint: 0
   layout_discovery: 0
@@ -43,6 +44,8 @@ module:
   media_library: 0
   menu_ui: 0
   menus_attribute: 0
+  metatag: 0
+  metatag_facebook: 0
   module_filter: 0
   node: 0
   options: 0

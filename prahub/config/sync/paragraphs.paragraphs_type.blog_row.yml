@@ -1,0 +1,11 @@
+uuid: 626a1a65-d22f-4b0a-8c05-7fb9c56804c6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:df43e10f-836c-4564-873c-5ff35214b995'
+id: blog_row
+label: 'Blog Row'
+icon_uuid: df43e10f-836c-4564-873c-5ff35214b995
+description: 'Blog Row'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: d2a4114c-ebf4-4be4-ba4c-08a41d2d8bc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_display_name
+    - taxonomy.vocabulary.font_awesome
+id: taxonomy_term.font_awesome.field_display_name
+field_name: field_display_name
+entity_type: taxonomy_term
+bundle: font_awesome
+label: 'Display Name'
+description: 'Display Name'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

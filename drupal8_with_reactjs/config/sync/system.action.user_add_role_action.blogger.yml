@@ -1,0 +1,14 @@
+uuid: ebf7b153-98fe-4133-a770-c3ef5679bfe5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.blogger
+  module:
+    - user
+id: user_add_role_action.blogger
+label: 'Add the Blogger role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: blogger

@@ -1,0 +1,9 @@
+uuid: bf97dff4-f4f1-416d-a610-3cf9f0779c3e
+langcode: en
+status: true
+dependencies: {  }
+id: blogger
+label: Blogger
+weight: 3
+is_admin: null
+permissions: {  }
