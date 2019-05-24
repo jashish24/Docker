@@ -22,6 +22,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
         "drupal/core": "8.7.1",
+        "drupal/jsonapi_extras": "^3.7",
         "drupal/migrate_manifest": "^1.8",
         "drupal/migrate_plus": "^4.2",
         "drupal/migrate_tools": "^4.1",

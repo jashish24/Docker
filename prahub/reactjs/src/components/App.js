@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, NavLink, HashRouter } from "react-router-dom";
 import { Nav, Navbar } from 'react-bootstrap';
 import Home from "./Home";
+import User from "./User";
 import Blogs from "./Blogs";
 import '../assets/vendor/bootstrap/css/bootstrap.min.css';
 import '../assets/vendor/fontawesome/css/all.min.css';
@@ -19,8 +20,8 @@ class App extends Component {
             <Navbar.Collapse id="navbarResponsive">
               <Nav>
                 <ul className="navbar-nav ml-auto">
-                  <li className="nav-item"><NavLink exact replace className="nav-link" to="/">Home</NavLink></li>
-                  <li className="nav-item"><NavLink exact replace className="nav-link" to="/blogs">Blogs</NavLink></li>
+                  <li className="nav-item"><NavLink exact replace className="nav-link" title="Home" to="/">Home</NavLink></li>
+                  <li className="nav-item"><NavLink exact replace className="nav-link" title="Blogs" to="/blogs">Blogs</NavLink></li>
                 </ul>
               </Nav>
             </Navbar.Collapse>
@@ -29,7 +30,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={ Home } />
               <Route exact path="/blogs" component={ Blogs } />
-              <Route exact path="/users/:id" component={ Home } />
+              <Route exact path="/users/:id" component={ User } />
             </Switch>
           </div>
         </div>

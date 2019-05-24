@@ -10,7 +10,7 @@ export default class Intro extends Component {
         <div className="w-100">
           <h1 className="mb-0">{ user_intro.field_first_name } <span className="text-primary">{ user_intro.field_last_name }</span>
           </h1>
-          <div className="subheading mb-5">{ user_intro.field_address } · <a href="mailto:{ user_intro.mail }">{ user_intro.mail }</a>
+          <div className="subheading mb-5">{ user_intro.field_address } · <a href={ "mailto:" + user_intro.mail }>{ user_intro.mail }</a>
           </div>
           <p className="lead mb-5">{ user_intro.field_about }</p>
           <div className="social-icons">{ social_links }</div>

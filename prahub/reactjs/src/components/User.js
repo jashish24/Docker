@@ -29,8 +29,12 @@ class Home extends Component {
     });
 
     let uid = '4e4a3423-b54b-4f9b-9302-86bf36670234';
-    const api_url = this.baseurl + '/jsonapi/user/user/' + uid;
 
+    if (this.props.match.params.id) {
+      uid = this.props.match.params.id;
+    }
+
+    const api_url = this.baseurl + '/jsonapi/user/user/' + uid;
     await axios.get(api_url, {
       withCredentials: true, // include auth cookie
       headers: {
