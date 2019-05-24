@@ -20,8 +20,9 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "^1.27",
         "drupal/console": "^1.0.2",
-        "drupal/core": "8.7.1",
+        "drupal/core": "8.7.2",
         "drupal/jsonapi_extras": "^3.7",
         "drupal/migrate_manifest": "^1.8",
         "drupal/migrate_plus": "^4.2",
@@ -36,7 +37,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.7.0"
+        "webflo/drupal-core-require-dev": "^8.7.2"
     },
     "conflict": {
         "drupal/drupal": "*"
