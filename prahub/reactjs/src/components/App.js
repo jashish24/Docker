@@ -4,6 +4,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import Home from "./Home";
 import User from "./User";
 import Blogs from "./Blogs";
+import Blog from "./Blog";
 import '../assets/vendor/bootstrap/css/bootstrap.min.css';
 import '../assets/vendor/fontawesome/css/all.min.css';
 import '../assets/css/resume.css';
@@ -31,6 +32,7 @@ class App extends Component {
               <Route exact path="/" component={ Home } />
               <Route exact path="/blogs" component={ Blogs } />
               <Route exact path="/users/:id" component={ User } />
+              <Route exact path="/blogs/:blog_id" component={ Blog } />
             </Switch>
           </div>
         </div>
