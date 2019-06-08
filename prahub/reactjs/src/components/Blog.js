@@ -63,7 +63,6 @@ export default class Blog extends Component {
     const { blog } = this.state;
 
     if (blog) {
-      console.log(blog.data.attributes.field_tagline);
       return (
         <div className="negative-margin">
           <header className="masthead">
