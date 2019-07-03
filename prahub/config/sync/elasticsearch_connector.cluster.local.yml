@@ -1,0 +1,14 @@
+uuid: 6ce61a6f-a8d8-4bd2-a9ac-4229d57b96a4
+langcode: en
+status: '1'
+dependencies: {  }
+cluster_id: local
+name: Local
+url: 'http://127.0.0.1:9200'
+options:
+  multiple_nodes_connection: false
+  use_authentication: 0
+  authentication_type: Basic
+  username: ''
+  password: ''
+  timeout: '3'
