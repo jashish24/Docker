@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.blog.field_about_image
     - field.field.node.blog.field_blog_content
     - field.field.node.blog.field_tagline
+    - field.field.node.blog.field_video
     - node.type.blog
   module:
     - media_library
     - paragraphs
     - path
+    - video_embed_field
 id: node.blog.default
 targetEntityType: node
 bundle: blog
@@ -47,6 +49,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_video:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
     region: content
   path:
     type: path

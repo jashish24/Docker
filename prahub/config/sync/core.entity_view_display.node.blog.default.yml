@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.blog.field_about_image
     - field.field.node.blog.field_blog_content
     - field.field.node.blog.field_tagline
+    - field.field.node.blog.field_video
     - node.type.blog
   module:
     - entity_reference_revisions
     - user
+    - video_embed_field
 id: node.blog.default
 targetEntityType: node
 bundle: blog
@@ -41,9 +43,20 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_video:
+    weight: 104
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
