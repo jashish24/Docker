@@ -1,0 +1,6 @@
+services:
+  drush_command_test.commands:
+    class: \Drupal\drush_command_test\Commands\DrushCommandTestCommands
+    arguments: ['@entity.query', '@entity.manager']
+    tags:
+      - { name: drush.command }

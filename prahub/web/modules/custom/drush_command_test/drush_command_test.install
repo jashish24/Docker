@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update hooks for drush_command_test module.
+ */

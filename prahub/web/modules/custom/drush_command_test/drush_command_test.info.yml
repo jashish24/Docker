@@ -1,0 +1,5 @@
+name: 'Drush Command Test'
+type: module
+description: 'Drush Command Test.'
+core: 8.x
+package: 'command_test'

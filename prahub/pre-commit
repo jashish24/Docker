@@ -1,0 +1,100 @@
+#!/bin/bash
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+    AGAINST=HEAD
+else
+    # Initial commit: diff against an empty tree object
+    AGAINST=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+# Function to test for command dependencies.
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+# Function to search array.
+contains_element () {
+  local e
+  for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 0; done
+  return 1
+}
+# Set up variables to make coloured output simple.
+red=`tput setaf 1 && tput bold`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+# Ensure we have all the external tools we need
+if ! command_exists composer ; then
+  echo "composer not installed, for instructions visit https://getcomposer.org/"
+  exit 1
+fi
+
+FILES=$(git diff --cached --name-only $AGAINST);
+TOP_LEVEL=$(git rev-parse --show-toplevel);
+
+# Ensure we have all the things.
+printf "Installing or updating dependencies...\n"
+cd $TOP_LEVEL
+composer install
+# cd "$TOP_LEVEL/core"
+# yarn install
+cd $TOP_LEVEL
+
+printf "\n\nChecking changed files...\n"
+for FILE in $FILES; do
+    # Standard checks against all files in commit.
+    # Ensure the file still exists (i.e. is not being deleted).
+    if [ -a $FILE ] ; then
+      if [ ${FILE: -3} != ".sh" ] ; then
+        # Ensure we have the correct file permissions
+        STAT="$(stat -f  "%A" $FILE 2>/dev/null)"
+        if [ $? -ne 0 ]; then
+          STAT="$(stat -c  "%a" $FILE 2>/dev/null)"
+        fi
+        #if [ "$STAT" -ne "644" ] ; then
+            #echo "git pre-commit check failed: file $FILE should be 644 not $STAT"
+            #STATUS=1
+        #fi
+      fi
+    fi
+    # Don't commit changes to vendor.
+    if [[ "$FILE" =~ ^vendor/ ]]; then
+      echo "git pre-commit check failed: file in vendor directory being committed ($FILE). Copy the example.gitignore to .gitignore in Drupal root and unstage any changes in vendor."
+      STATUS=1
+    fi
+    # Don't commit changes to core/node_modules.
+    if [[ "$FILE" =~ ^core/node_modules/ ]]; then
+      echo "git pre-commit check failed: file in core/node_modules directory being committed ($FILE)"
+      STATUS=1
+    fi
+
+    ############################################################################
+    ### PHP AND YAML FILES
+    ############################################################################
+    if [[ -f "$TOP_LEVEL/$FILE" ]] && [[ $FILE =~ \.(inc|install|module|php|profile|test|theme|yml)$ ]]; then
+        # Test files with phpcs rules.
+        vendor/bin/phpcs "$TOP_LEVEL/$FILE" --runtime-set installed_paths "$TOP_LEVEL/vendor/drupal/coder/coder_sniffer" --standard=Drupal,DrupalPractice
+        PHPCS=$?
+        if [ "$PHPCS" -ne "0" ] ; then
+            # If there are failures set the status to a number other than 0.
+            STATUS=1
+        else
+            echo -e "PHPCS: $FILE ${green}passed${reset}"
+        fi
+
+    fi
+
+    ############################################################################
+    ### CSS FILES
+    ############################################################################
+    if [[ -f "$TOP_LEVEL/$FILE" ]] && [[ $FILE =~ \.css$ ]] && [[ -f "core/node_modules/.bin/stylelint" ]] ; then
+      core/node_modules/.bin/stylelint "$FILE"
+      if [ "$?" -ne "0" ] ; then
+        STATUS=1
+        else
+            echo -e "STYLELINT: $FILE ${green}passed${reset}"
+        fi
+    fi
+
+done
+
+exit $STATUS
